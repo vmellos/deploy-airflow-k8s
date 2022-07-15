@@ -33,6 +33,10 @@ kubectl create secret generic airflow-ssh-git-secret --from-file=gitSshKey=/home
 kubectl delete secret -n airflow airflow-ssh-git-secret
 kubectl get secret -n airflow 
 kubectl logs -n airflow POD_NAME
+kubectl config set-context default
+
+minikube ssh docker container ls
+minikube ssh "docker container exec -it -u 0 <Container ID> /bin/bash"
 
 
 # kubectl - Cheat Sheet 
